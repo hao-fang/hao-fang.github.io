@@ -1,4 +1,4 @@
-TIAL group homepage
+Hao Fang's homepage
 
-[http://tial-uw.github.io/](http://tial-uw.github.io/) 
+[http://hao-fang.github.io/](http://hao-fang.github.io/) 
 
