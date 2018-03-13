@@ -23,6 +23,7 @@ function BibtexParser() {
 	this.input = "";
 
 	this.entries = {};
+  /*
 	this.strings = {
 		JAN: "January",
 		FEB: "February",
@@ -36,6 +37,21 @@ function BibtexParser() {
 		OCT: "October",
 		NOV: "November",
 		DEC: "December"
+	};
+  */
+	this.strings = {
+		JAN: "Jan.",
+		FEB: "Feb.",
+		MAR: "Mar.",
+		APR: "April",
+		MAY: "May",
+		JUN: "June",
+		JUL: "July",
+		AUG: "Aug.",
+		SEP: "Sept.",
+		OCT: "Oct.",
+		NOV: "Nov.",
+		DEC: "Dec."
 	};
 	this.currentKey = "";
 	this.currentEntry = "";
@@ -258,7 +274,7 @@ function BibtexDisplay() {
 	function reformat(entry) {
 		var retEntry = entry;
 		if (entry.hasOwnProperty("AUTHOR")) {
-			var perAuthor = entry.AUTHOR.split("and");
+			var perAuthor = entry.AUTHOR.split(" and ");
 			var authStr = "";
 			for (var i = 0; i < perAuthor.length; i++) {
 				//! this for-loop is modified by hfang
@@ -402,14 +418,13 @@ function bibtex_js_draw() {
 			//! \note: load is async call.
 			//! See http://stackoverflow.com/questions/29199442/jquery-load-inside-a-for-loop-not-working.
 			(function (type) {
-				var bibtex_input_id = "#bibtex_input-" + String(type);
-				var bibtex_display_id = "#bibtex_display-" + String(type);
-				var bib_filename = "bib/" + String(type) + ".bib"
-        console.log(bib_filename);
-					$(bibtex_input_id).load(bib_filename, function() {
-						text = $("#bibtex_input_common").text() + $(bibtex_input_id).text();
-						(new BibtexDisplay()).displayBibtex(text, $(bibtex_display_id));
-					});
+        var bibtex_input_id = "#bibtex_input-" + String(type);
+        var bibtex_display_id = "#bibtex_display-" + String(type);
+        var bib_filename = "bib/" + String(type) + ".bib"
+        $(bibtex_input_id).load(bib_filename, function() {
+          text = $("#bibtex_input_common").text() + $(bibtex_input_id).text();
+          (new BibtexDisplay()).displayBibtex(text, $(bibtex_display_id));
+        });
 			})(type);
 		}
 	});

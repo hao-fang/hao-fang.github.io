@@ -141,19 +141,37 @@
             </div>
 						<div id="bibtex_input_common" style="display:none;"></div>
 
+        		<!-- Journal Publications -->
+            <div class="col-md-12">
+                <h4>Journal Publications</h4>
+            </div>
 						<div id="bibtex_input-journal" style="display:none;"></div>
 						<div id="bibtex_display-journal"></div>
+
+        		<!-- Conference Publications -->
+            <div class="col-md-12">
+                <h4>Conference Publications</h4>
+            </div>
+						<div id="bibtex_input-conference" style="display:none;"></div>
+						<div id="bibtex_display-conference"></div>
+
+        		<!-- Technical Reports -->
+            <div class="col-md-12">
+                <h4>Technical Reports</h4>
+            </div>
+						<div id="bibtex_input-report" style="display:none;"></div>
+						<div id="bibtex_display-report"></div>
+
 						<div class="col-md-12 bibtex_template">
-							<h4 class="page-header">Journal</h4>
 							<div class ="well" style="margin-bottom:10px; padding:10px;">
 								<span class="author"></span>.
-								<span class="if year"><span class="year"></span></span>.
 								<span class="title" style="font-weight: bold;"></span>.
 
 								<span class="if booktitle ">
 									In <span class="booktitle" style="font-style: italic;"></span><!--
+									--><span class="if address">, <span class="address"></span></span><!--
 									--><span class="if pages">, pp. <span class="pages"></span></span><!--
-									-->.
+									-->,
 								</span>
 
 								<span class="if journal">
@@ -161,14 +179,20 @@
 									--><span class="if volume">, vol. <span class="volume"></span></span><!--
 									--><span class="if number">, no. <span class="number"></span></span><!--
 									--><span class="if pages">, pp. <span class="pages"></span></span><!--
-									-->.
+									-->,
 								</span>
 
-								<span class="if pdf">
-									<a class="pdf">[pdf]</a>
-								</span>
+								<span class="if month"><span class="month"></span>,</span>
+								<span class="if year"><span class="year"></span></span>.
+
+								<span class="if highlight"><span class="highlight" style="font-weight:bold;"></span></span>
+
+								<span class="if pdf"><a class="pdf" target="_blank">[pdf]</a></span>
+								<span class="if codes"><a class="codes" target="_blank">[codes]</a></span>
+								<span class="if project"><a class="project" target="_blank">[project]</a></span>
 							</div>
 						</div>
+
         </div>
         <!-- /.row -->
 
