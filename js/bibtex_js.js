@@ -274,7 +274,7 @@ function BibtexDisplay() {
 	function reformat(entry) {
 		var retEntry = entry;
 		if (entry.hasOwnProperty("AUTHOR")) {
-			var perAuthor = entry.AUTHOR.split(" and ");
+			var perAuthor = entry.AUTHOR.split(/\band\b/);
 			var authStr = "";
 			for (var i = 0; i < perAuthor.length; i++) {
 				//! this for-loop is modified by hfang
