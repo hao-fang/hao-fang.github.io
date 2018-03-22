@@ -289,7 +289,7 @@ function BibtexDisplay() {
 					authStr += " ";
 					authStr += curAuth[0].trim();
 				} else {
-					throw "unable to parse curAuth: " + perAuthor[i];
+          throw "unable to parse curAuth: " + perAuthor[i];
 				}
 
 				if (i < (perAuthor.length - 2)) {
